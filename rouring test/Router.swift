@@ -18,7 +18,7 @@ final class Router: ObservableObject {
     @Published var currentView: StartView = .sleep
     @Published var views: [StartView: AnyView] = [:]
     
-    let animation: Animation = .default
+    let animation: Animation = .spring()
     
     init() {
         views[.sleep] = AnyView(SleepView())
