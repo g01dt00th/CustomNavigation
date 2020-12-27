@@ -7,10 +7,27 @@
 
 import SwiftUI
 
+
+extension AnyTransition {
+    static var moveAndFade: AnyTransition {
+        let insertion = AnyTransition.move(edge: .trailing)
+            .combined(with: .scale(scale: 0.5))
+        let removal = AnyTransition.scale(scale: 0.1)
+        return .asymmetric(insertion: insertion, removal: removal)
+    }
+}
+
+
 struct ContentView: View {
+    @EnvironmentObject var router: Router
+    
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        if let view = router.views[router.currentView] {
+            view
+                .transition(.moveAndFade)
+
+        }
     }
 }
 
