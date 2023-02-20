@@ -14,14 +14,10 @@ struct LoginView: View {
         VStack {
             Text("Login View")
             Button("vso") {
-                withAnimation(router.animation) {
-                router.currentView = .vso
-                }
+                router.open(.vso)
             }
             Button("manager") {
-                withAnimation(router.animation) {
-                router.currentView = .manager
-                }
+                router.open(.manager)
             }
 
         }

@@ -14,9 +14,7 @@ struct SleepView: View {
         VStack {
             Text("Sleep View")
             Button("goto Login") {
-                withAnimation(router.animation) {
-                    router.currentView = .login
-                }
+                router.open(.login)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

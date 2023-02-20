@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B1D1A1A29A3527300F6AA3A /* AnyTransition+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1D1A1929A3527300F6AA3A /* AnyTransition+Ext.swift */; };
 		5E8F6E302593302800BC3587 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8F6E2F2593302800BC3587 /* AppDelegate.swift */; };
 		5E8F6E322593302800BC3587 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8F6E312593302800BC3587 /* SceneDelegate.swift */; };
 		5E8F6E342593302800BC3587 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8F6E332593302800BC3587 /* ContentView.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B1D1A1929A3527300F6AA3A /* AnyTransition+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyTransition+Ext.swift"; sourceTree = "<group>"; };
 		5E8F6E2C2593302800BC3587 /* rouring test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rouring test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E8F6E2F2593302800BC3587 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E8F6E312593302800BC3587 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				5E8F6E3D2593302900BC3587 /* Info.plist */,
 				5E8F6E372593302900BC3587 /* Preview Content */,
 				5E8F6E442593304400BC3587 /* Router.swift */,
+				0B1D1A1929A3527300F6AA3A /* AnyTransition+Ext.swift */,
 			);
 			path = "rouring test";
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 				5E8F6E4B259330F300BC3587 /* LoginView.swift in Sources */,
 				5E8F6E4E2593310600BC3587 /* VSOView.swift in Sources */,
 				5E8F6E512593311C00BC3587 /* ManagerView.swift in Sources */,
+				0B1D1A1A29A3527300F6AA3A /* AnyTransition+Ext.swift in Sources */,
 				5E8F6E452593304400BC3587 /* Router.swift in Sources */,
 				5E8F6E302593302800BC3587 /* AppDelegate.swift in Sources */,
 				5E8F6E322593302800BC3587 /* SceneDelegate.swift in Sources */,

@@ -7,26 +7,28 @@
 
 import SwiftUI
 
-
-extension AnyTransition {
-    static var moveAndFade: AnyTransition {
-        let insertion = AnyTransition.move(edge: .trailing)
-            .combined(with: .scale(scale: 0.5))
-        let removal = AnyTransition.scale(scale: 0.1)
-        return .asymmetric(insertion: insertion, removal: removal)
-    }
-}
-
-
 struct ContentView: View {
     @EnvironmentObject var router: Router
     
     
     var body: some View {
-        if let view = router.views[router.currentView] {
-            view
-                .transition(.moveAndFade)
-
+        switch router.currentView {
+        case .sleep:
+            SleepView()
+                .transition(router.transition)
+                .edgesIgnoringSafeArea(.all)
+        case .manager:
+            ManagerView()
+                .transition(router.transition)
+                .edgesIgnoringSafeArea(.all)
+        case .login:
+            LoginView()
+                .transition(router.transition)
+                .edgesIgnoringSafeArea(.all)
+        case .vso:
+            VSOView()
+                .transition(router.transition)
+                .edgesIgnoringSafeArea(.all)
         }
     }
 }
@@ -34,5 +36,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(Router())
     }
 }

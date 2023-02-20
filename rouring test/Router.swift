@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum StartView: CaseIterable {
+enum StartView: Int, Equatable {
     case sleep
     case login
     case vso
@@ -16,15 +16,29 @@ enum StartView: CaseIterable {
 
 final class Router: ObservableObject {
     @Published var currentView: StartView = .sleep
-    @Published var views: [StartView: AnyView] = [:]
+    @Published private(set) var transition: AnyTransition = .slideForward
     
-    let animation: Animation = .spring()
-    
-    init() {
-        views[.sleep] = AnyView(SleepView())
-        views[.login] = AnyView(LoginView())
-        views[.vso] = AnyView(VSOView())
-        views[.manager] = AnyView(ManagerView())
+    func stepBack() {
+        let currentIndex = currentView.rawValue
+        if let newView = StartView(rawValue: currentIndex - 1) {
+            transition = .slideBackward
+            withAnimation {
+                currentView = newView
+            }
+        }
     }
     
+    func open(_ view: StartView) {
+        transition = .slideForward
+        withAnimation {
+            currentView = view
+        }
+    }
+    
+    func back(to view: StartView) {
+        transition = .slideBackward
+        withAnimation {
+            currentView = view
+        }
+    }
 }

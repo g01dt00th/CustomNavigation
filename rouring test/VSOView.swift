@@ -14,9 +14,7 @@ struct VSOView: View {
         VStack {
             Text("VSO View")
             Button("Logout") {
-                withAnimation(router.animation) {
-                router.currentView = .login
-                }
+                router.back(to: .login)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
